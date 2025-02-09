@@ -46,7 +46,7 @@ export default function KeyInfo() {
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
     >
-    <div className="flex flex-col max-w-xl items-center rounded-md  mx-auto bg-black text-white py-8 md:px-24 px-8">
+    <div className="flex flex-col max-w-xl items-center rounded-md  mx-auto bg-black text-white py-14 md:px-24 px-8">
       <div>
       <GoInfo className="text-5xl text-green-500 mx-auto mb-4"/>
         <h2 className="text-4xl font-semibold mb-4 text-center">Obtenir les infos de la clé</h2>

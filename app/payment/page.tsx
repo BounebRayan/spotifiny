@@ -75,7 +75,7 @@ const SuccessPageContent = () => {
 
   return (
     <motion.div 
-      className="pb-16 md:pt-16 pt-8 md:px-24 px-8 bg-black text-white"
+      className="pb-16 md:pt-16 py-14 md:px-24 px-8 bg-black text-white"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}

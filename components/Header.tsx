@@ -31,7 +31,7 @@ export default function Header() {
                   </MenuButton>
                 </div>
 
-                <MenuItems anchor="bottom end" transition className="w-52 origin-top-right rounded-lg border border-[#818181] bg-black p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0">
+                <MenuItems anchor="bottom end" transition className="w-full sm:w-52 origin-top-right border-y mt-1 sm:rounded-lg sm:border border-[#818181] bg-black p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0">
 
                   <MenuItem>
                     <Link href="/upgrade" className="block rounded-md data-[focus]:bg-[#121212] w-full py-1.5 px-3">
@@ -64,10 +64,10 @@ export default function Header() {
                   </MenuButton>
                 </div>
                 
-                <MenuItems anchor="bottom end" transition className="w-52 origin-top-right rounded-lg border border-[#818181] bg-black p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0">
+                <MenuItems anchor="bottom end" transition className="w-full sm:w-52 origin-top-right border-y mt-1 sm:rounded-lg sm:border border-[#818181] bg-black p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0">
                   <div className="py-1">
                     <MenuItem>
-                      <Link href="/faq" className={`block data-[focus]:bg-[#121212] rounded-md w-full py-1.5 px-3`}>
+                      <Link href="/faq" className="block data-[focus]:bg-[#121212] rounded-md w-full py-1.5 px-3">
                         FAQ
                       </Link>
                       </MenuItem>

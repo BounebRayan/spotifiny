@@ -93,76 +93,74 @@ export default function Plans() {
     <section id="pricing">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl font-bold">Choose Your Plan</h2>
-        <p className="text-gray-400 mb-8 mt-2">
+        <p className="text-gray-400 mb-5 mt-2">
           Arrêtez de vous soucier chaque mois du coût de Spotify. <br /> Avec un seul paiement, obtenez Premium à vie.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-          {/* Solo Plan */}
-          <div className="bg-black border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
-            <h3 className="text-2xl font-semibold">Solo</h3>
-            <p>----------</p>
-            <p className="text-4xl font-bold mb-6">30 DT</p>
-            <ul className="text-left mb-6 space-y-3">
-              <li>1 Clé</li>
-              <li>Remplacements illimités</li>
-              <li>Spotify Premium à vie</li>
-            </ul>
-            <button
-              onClick={() => initiatePayment(30000, 1)}
-              disabled={stock === null || stock <= 0}
-              className={`w-full py-2 font-semibold rounded-lg transition-colors ${
-                stock && stock > 0 ? "bg-green-500 text-black hover:bg-green-600" : "bg-gray-500 cursor-not-allowed"
-              }`}
-            >
-              {loading ? 'Loading' : stock && stock > 0 ? 'Achetter' : 'Stock épuisé'}
-            </button>
-          </div>
-  
-          {/* Duo Plan */}
-          <div className="relative bg-black border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all sm:scale-105 sm:hover:scale-110 hover:scale-105 duration-300">
-            <div className="absolute -rotate-45 top-9 left-2 transform -translate-x-1/2 -translate-y-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-transparent border-t-green-500">
-              <span className="text-white text-xs left-1/2 transform -translate-x-1/2 -translate-y-1/2">Popular</span>
-            </div>
-            <h3 className="text-2xl font-semibold">Duo</h3>
-            <p>----------</p>
-            <p className="text-4xl font-bold mb-6">50 DT</p>
-            <ul className="text-left mb-6 space-y-3">
-              <li>2 Clés</li>
-              <li>Remplacements illimités</li>
-              <li>Spotify Premium à vie</li>
-            </ul>
-            <button
-              onClick={() => initiatePayment(50000 , 2)}
-              disabled={stock === null || stock <= 1}
-              className={`w-full py-2 font-semibold rounded-lg transition-colors ${
-                stock && stock > 1 ? "bg-green-500 text-black hover:bg-green-600" : "bg-gray-500 cursor-not-allowed"
-              }`}
-            >
-              {loading ? 'Loading' :  stock && stock > 1 ? 'Achetter' : 'Stock épuisé'}
-            </button>
-          </div>
+        <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-2 flex overflow-x-auto md:overflow-hidden space-x-6 p-4">
+  {/* Solo Plan */}
+  <div className="min-w-[250px] sm:w-auto bg-black border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+    <h3 className="text-2xl font-semibold">Solo</h3>
+    <p>----------</p>
+    <p className="text-4xl font-bold mb-6">30 DT</p>
+    <ul className="text-left mb-6 space-y-3">
+      <li>1 Clé</li>
+      <li>Remplacements illimités</li>
+      <li>Spotify Premium à vie</li>
+    </ul>
+    <button
+      onClick={() => initiatePayment(30000, 1)}
+      disabled={stock === null || stock <= 0}
+      className={`w-full py-2 font-semibold rounded-lg transition-colors ${
+        stock && stock > 0 ? "bg-green-500 text-black hover:bg-green-600" : "bg-gray-500 cursor-not-allowed"
+      }`}
+    >
+      {loading ? "Loading" : stock && stock > 0 ? "Acheter" : "Stock épuisé"}
+    </button>
+  </div>
 
-          {/* Family Plan */}
-          <div className="bg-black border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all hover:scale-105 duration-300">
-            <h3 className="text-2xl font-semibold">Famille</h3>
-            <p>----------</p>
-            <p className="text-4xl font-bold mb-6">90 DT</p>
-            <ul className="text-left mb-6 space-y-3">
-              <li>4 Clés</li>
-              <li>Remplacements illimités</li>
-              <li>Spotify Premium à vie</li>
-            </ul>
-            <button
-              onClick={() => initiatePayment(90000 , 4)}
-              disabled={stock === null || stock <= 3}
-              className={`w-full py-2 font-semibold rounded-lg transition-colors ${
-                stock && stock > 3 ? "bg-green-500 text-black hover:bg-green-600" : "bg-gray-500 cursor-not-allowed"
-              }`}
-            >
-              { loading ? 'Loading' :  stock && stock > 3 ? 'Achetter' : 'Stock épuisé'}
-            </button>
-          </div>
-        </div>
+  {/* Duo Plan */}
+  <div className="min-w-[250px] sm:w-auto relative bg-black border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all sm:scale-105 sm:hover:scale-110 hover:scale-105 duration-300">
+    <h3 className="text-2xl font-semibold">Duo</h3>
+    <p>----------</p>
+    <p className="text-4xl font-bold mb-6">50 DT</p>
+    <ul className="text-left mb-6 space-y-3">
+      <li>2 Clés</li>
+      <li>Remplacements illimités</li>
+      <li>Spotify Premium à vie</li>
+    </ul>
+    <button
+      onClick={() => initiatePayment(50000, 2)}
+      disabled={stock === null || stock <= 1}
+      className={`w-full py-2 font-semibold rounded-lg transition-colors ${
+        stock && stock > 1 ? "bg-green-500 text-black hover:bg-green-600" : "bg-gray-500 cursor-not-allowed"
+      }`}
+    >
+      {loading ? "Loading" : stock && stock > 1 ? "Acheter" : "Stock épuisé"}
+    </button>
+  </div>
+
+  {/* Family Plan */}
+  <div className="min-w-[250px] sm:w-auto bg-black border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all hover:scale-105 duration-300">
+    <h3 className="text-2xl font-semibold">Famille</h3>
+    <p>----------</p>
+    <p className="text-4xl font-bold mb-6">90 DT</p>
+    <ul className="text-left mb-6 space-y-3">
+      <li>4 Clés</li>
+      <li>Remplacements illimités</li>
+      <li>Spotify Premium à vie</li>
+    </ul>
+    <button
+      onClick={() => initiatePayment(90000, 4)}
+      disabled={stock === null || stock <= 3}
+      className={`w-full py-2 font-semibold rounded-lg transition-colors ${
+        stock && stock > 3 ? "bg-green-500 text-black hover:bg-green-600" : "bg-gray-500 cursor-not-allowed"
+      }`}
+    >
+      {loading ? "Loading" : stock && stock > 3 ? "Acheter" : "Stock épuisé"}
+    </button>
+  </div>
+</div>
+
       </div>
     </section>
     </motion.div>
