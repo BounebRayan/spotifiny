@@ -71,7 +71,7 @@ export default function Features() {
     <FaQuestionCircle className="text-4xl text-green-500 mx-auto sm:mb-4 mb-3" />
     <h3 className="text-2xl font-semibold mb-2">Spotify Premium ?</h3>
     <p className="text-gray-400">
-    Téléchargez vos musiques pour une écoute hors ligne, bénéficiez d’un son haute qualité et zappez sans limite, le tout sans publicité !
+    Téléchargez vos musiques pour une écoute hors ligne, bénéficiez d’un son haute qualité et zappez sans limite, le tout sans publicité
     </p>
   </div>
 </div>
