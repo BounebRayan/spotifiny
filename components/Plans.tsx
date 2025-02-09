@@ -54,7 +54,7 @@ export default function Plans() {
       lifespan: 10,
       checkoutForm: true,
       addPaymentFeesToAmount: false,
-      webhook: "http://localhost:3000/payment",
+      webhook: process.env.NEXT_PUBLIC_WEBHOOK_URL,
       silentWebhook: false,
       theme: "dark",
     };
