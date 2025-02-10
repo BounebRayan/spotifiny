@@ -6,7 +6,7 @@ import { HiUserGroup } from 'react-icons/hi';
 export default function Features() {
   return (
     <motion.div 
-    className="md:pb-16 pb-16 md:pt-6 md:px-24 px-7 pt-2 bg-black text-white"
+    className="md:pb-16 pb-16 md:pt-6 md:px-24 px-7 pt-2 text-white"
     initial={{ opacity: 0, y: -20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
@@ -22,7 +22,7 @@ export default function Features() {
         {/* Steps Grid */}
         <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-8 flex overflow-x-auto space-x-6 pb-4">
   {/* Step 1: Buy a Key */}
-  <div className="min-w-[250px] sm:w-auto bg-black sm:px-8 md:py-8 py-3 shadow-lg">
+  <div className="min-w-[250px] sm:w-auto sm:px-8 md:py-8 py-3 shadow-lg">
     <FaRegCreditCard className="text-4xl text-green-500 mx-auto sm:mb-4 mb-3" />
     <h3 className="text-2xl font-semibold mb-2">Achetez une clé</h3>
     <p className="text-gray-400">
@@ -31,7 +31,7 @@ export default function Features() {
   </div>
 
   {/* Step 2: Upgrade Spotify */}
-  <div className="min-w-[250px] sm:w-auto bg-black sm:px-8 md:py-8 py-3 shadow-lg">
+  <div className="min-w-[250px] sm:w-auto sm:px-8 md:py-8 py-3 shadow-lg">
     <FaSpotify className="text-4xl text-green-500 mx-auto sm:mb-4 mb-3" />
     <h3 className="text-2xl font-semibold mb-2">Passez en Premium</h3>
     <p className="text-gray-400">
@@ -40,7 +40,7 @@ export default function Features() {
   </div>
 
   {/* Step 3: Renew if Downgraded */}
-  <div className="min-w-[250px] sm:w-auto bg-black sm:px-8 md:py-8 py-3 shadow-lg">
+  <div className="min-w-[250px] sm:w-auto sm:px-8 md:py-8 py-3 shadow-lg">
     <FaUndo className="text-4xl text-green-500 mx-auto sm:mb-4 mb-3" />
     <h3 className="text-2xl font-semibold mb-2">Renouvelez facilement</h3>
     <p className="text-gray-400">
@@ -49,7 +49,7 @@ export default function Features() {
   </div>
 
   {/* Step 4: Secure & Trusted */}
-  <div className="min-w-[250px] sm:w-auto bg-black sm:px-8 md:py-8 py-3 shadow-lg">
+  <div className="min-w-[250px] sm:w-auto sm:px-8 md:py-8 py-3 shadow-lg">
     <FaLock className="text-4xl text-green-500 mx-auto sm:mb-4 mb-3" />
     <h3 className="text-2xl font-semibold mb-2">Sécurisé et fiable</h3>
     <p className="text-gray-400">
@@ -58,7 +58,7 @@ export default function Features() {
   </div>
 
   {/* Step 5: Simple & Effective */}
-  <div className="min-w-[250px] sm:w-auto bg-black sm:px-8 md:py-8 py-3 shadow-lg">
+  <div className="min-w-[250px] sm:w-auto  sm:px-8 md:py-8 py-3 shadow-lg">
     <HiUserGroup className="text-4xl text-green-500 mx-auto sm:mb-4 mb-3" />
     <h3 className="text-2xl font-semibold mb-2">Simple et efficace</h3>
     <p className="text-gray-400">
@@ -67,7 +67,7 @@ export default function Features() {
   </div>
 
   {/* Step 6: Why Premium? */}
-  <div className="min-w-[250px] sm:w-auto bg-black sm:px-8 md:py-8 py-3 shadow-lg">
+  <div className="min-w-[250px] sm:w-auto  sm:px-8 md:py-8 py-3 shadow-lg">
     <FaQuestionCircle className="text-4xl text-green-500 mx-auto sm:mb-4 mb-3" />
     <h3 className="text-2xl font-semibold mb-2">Spotify Premium ?</h3>
     <p className="text-gray-400">

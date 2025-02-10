@@ -41,12 +41,12 @@ export default function UpgradePage() {
 
   return (
     <motion.div 
-    className="pb-16 md:pt-12 md:px-24 bg-black text-white"
+    className="pb-16 md:pt-12 md:px-24 text-white"
     initial={{ opacity: 0, y: -20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
     >
-    <div className="flex flex-col max-w-xl items-center rounded-md  mx-auto bg-black text-white py-14 md:px-24 px-8">
+    <div className="flex flex-col max-w-xl items-center rounded-md  mx-auto  text-white py-14 md:px-24 px-8">
     <GrUpgrade className="text-5xl text-green-500 mx-auto mb-4" />
       <h2
         className="text-4xl font-bold mb-4 text-center"
@@ -109,10 +109,10 @@ export default function UpgradePage() {
             </option>
           ))}
         </select>
-        <div className="flex-grow">
+        <div className="flex-grow outline-none">
       <FaRegQuestionCircle
         data-tooltip-id="info-tooltip"
-        className="h-6 w-6  mx-auto cursor-pointer text-gray-300 hover:text-gray-500"
+        className="h-6 w-6  mx-auto cursor-pointer text-gray-300 hover:text-gray-500 outline-none"
       />
       <Tooltip id="info-tooltip" place="top" className="!bg-gray-900 !text-white !p-2 !rounded-md">
       Si votre pays est en rupture de stock, vous pouvez en choisir un autre. <br /> Cela n'affectera que légèrement les recommandations.

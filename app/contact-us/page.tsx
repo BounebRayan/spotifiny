@@ -62,7 +62,7 @@ export default function ContactUs() {
 
   return (
     <motion.div
-      className="pb-8 pt-12 px-8 md:px-24 bg-black text-white min-h-screen flex flex-col items-center"
+      className="pb-8 pt-12 px-8 md:px-24  text-white min-h-screen flex flex-col items-center"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}

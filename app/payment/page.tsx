@@ -5,7 +5,6 @@ import { useSearchParams } from 'next/navigation';
 import { motion } from "framer-motion";
 import { FaCheck } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
-import { send } from "process";
 
 const SuccessPageContent = () => {
   const searchParams = useSearchParams(); 
@@ -57,7 +56,8 @@ const SuccessPageContent = () => {
   };
 
   const fetchPaymentStatus = async (paymentRef: string) => {
-    const url = `https://api.preprod.konnect.network/api/v2/payments/${paymentRef}`;
+    const baseurl= process.env.NEXT_PUBLIC_PAYMENT_URL;
+    const url = `${baseurl}/${paymentRef}`;
     try {
       const response = await fetch(url, {
         method: 'GET',
@@ -86,12 +86,12 @@ const SuccessPageContent = () => {
 
   return (
     <motion.div 
-      className="pb-16 md:pt-16 py-14 md:px-24 px-8 bg-black text-white"
+      className="pb-16 md:pt-16 py-14 md:px-24 px-8 text-white"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex flex-col items-center justify-center bg-black text-white">
+      <div className="flex flex-col items-center justify-center  text-white">
         <div className="max-w-lg mx-auto text-center">
           
           {loading ? (

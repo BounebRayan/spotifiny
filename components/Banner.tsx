@@ -14,7 +14,7 @@ export default function SpotifyUpgradeBanner() {
 
   return (
     <motion.div 
-      className="w-full bg-black text-white py-24 md:py-32 px-6 flex flex-col items-center justify-center text-center rounded-2xl shadow-lg "
+      className="w-full text-white py-24 md:py-32 px-6 flex flex-col items-center justify-center text-center rounded-2xl "
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}

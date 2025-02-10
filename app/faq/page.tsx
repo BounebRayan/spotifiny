@@ -6,12 +6,12 @@ import { FaQuestionCircle } from 'react-icons/fa';
 const FAQ = () => {
   return (
     <motion.div
-      className="pb-6 md:px-24 bg-black text-white"
+      className="pb-6 md:px-24  text-white"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="md:max-w-6xl mx-auto bg-black text-white md:mt-10 py-10 md:px-12 px-8 rounded-md">
+      <div className="md:max-w-6xl mx-auto text-white md:mt-10 py-10 md:px-12 px-8 rounded-md">
         <FaQuestionCircle className="text-5xl text-green-500 mx-auto mb-4" />
         <h1 className="text-4xl font-bold text-center mb-4">Questions Fréquemment Posées</h1>
         <div className="w-1/2 mx-auto border-t border-gray-600 mb-6"></div>
