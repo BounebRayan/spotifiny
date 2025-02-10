@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import { motion } from "framer-motion";
 import { FaCheck } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
+import { send } from "process";
 
 const SuccessPageContent = () => {
   const searchParams = useSearchParams(); 
@@ -29,6 +30,7 @@ const SuccessPageContent = () => {
       if (result.keys && result.keys.length > 0) {
         setPurchasedKeys(result.keys.map((keyObj: { key: string }) => keyObj.key));
         determinePlan(amount);
+       //sendKeysByMail(email, result.keys.map((keyObj: { key: string }) => keyObj.key).join(', '));
       } else {
         setPaymentStatus("Aucune clé disponible pour cet achat.");
       }
@@ -36,6 +38,15 @@ const SuccessPageContent = () => {
       console.error('Error fetching keys:', error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const sendKeysByMail = async ( email: string, keys: string) => {
+    const url = `/api/send-keys-by-email`;
+    try {
+       await fetch(url, {method: 'POST', body: JSON.stringify({email, key: keys})});
+    } catch (error) {
+      console.error('Error sending email:', error);
     }
   };
 

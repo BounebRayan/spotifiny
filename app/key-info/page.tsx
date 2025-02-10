@@ -56,8 +56,11 @@ export default function KeyInfo() {
         <label htmlFor="key" className="font-semibold mb-1 block text-sm">Clé</label>
         <input
           type="text"
+          name="key"
+          id="key"
           placeholder="Entrez votre clé ici"
           value={key}
+          autoComplete="on"
           onChange={(e) => setKey(e.target.value)}
           required
           className="w-full p-2.5 bg-[#121212] border border-[#818181] rounded outline-none hover:border-white focus:border-whitetransition"
@@ -76,18 +79,16 @@ export default function KeyInfo() {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mt-6 p-4 border border-gray-700 bg-gray-800 rounded"
+            className="mt-2 p-2"
           >
-            <h3 className="text-lg font-semibold mb-1">Détails de la clé :</h3>
-            <p><span className="font-semibold">Statut :</span> {info.status == 'not_exist' ? "Cette clé n'existe pas": info.status}</p> 
+            {info.status != 'success' &&  <p className="text-center">{info.message}</p> } 
             {info.status == "success" && (
             <>
-              <p><span className="font-semibold">Clé :</span> {key}</p>
-              <p><span className="font-semibold">Nom d'utilisateur Spotify :</span> {info.username}</p>
-              <p><span className="font-semibold">Adresse :</span> {info.verify_address}</p>
-              <p><span className="font-semibold">Utilisable :</span> {info.used ? "Non" : "Oui"}</p>
-              <p><span className="font-semibold">Date d'achat :</span> {info.purchase_date}</p>
-              <p><span className="font-semibold">Dernière utilisation :</span> {info.used_date}</p>
+              <h3 className="text-lg font-semibold">Détails de la clé :</h3>
+              <p><span className="font-semibold text-green-400">Nom d'utilisateur Spotify :</span> {info.username}</p>
+              <p><span className="font-semibold text-green-400">Adresse :</span> {info.verify_address}</p>
+              <p><span className="font-semibold text-green-400">Utilisable :</span> {info.used ? "Non" : "Oui"}</p>
+              {info.used_date && <p><span className="font-semibold text-green-400">Dernière utilisation :</span> {info.used_date}</p>}
             </>
 )}
 

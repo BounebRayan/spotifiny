@@ -3,26 +3,33 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaRandom, FaRegQuestionCircle, FaUndo } from "react-icons/fa";
+import { Tooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
 
 const RenewPage = () => {
   const [countries, setCountries] = useState([]);
   const [form, setForm] = useState({
     key: "",
-    usr: "",
+    spotifyusername: "",
     pwd: "",
     newEmail: "",
-    newPwd: "",
     country: "",
   });
   const [showNewAccount, setShowNewAccount] = useState(false);
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [underMaintenance, setUnderMaintenance] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
+    
     fetch("/api/stock")
       .then((res) => res.json())
       .then((data) => setCountries(data))
-      .catch(() => setCountries([]));
+      .catch(() => { setUnderMaintenance(true); return setCountries([])});
+    setLoading(false);
   }, []);
+
 
   const handleChange = (e: { target: { name: string; value: string; }; }) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -65,6 +72,8 @@ const RenewPage = () => {
           <input
             type="text"
             name="key"
+            id="key"
+            autoComplete="on"
             placeholder="Entrez votre clé ici"
             value={form.key}
             onChange={handleChange}
@@ -72,17 +81,19 @@ const RenewPage = () => {
             className="w-full p-2.5 mb-4 bg-[#121212] border border-[#818181] rounded outline-none hover:border-white focus:border-white"
           />
 
-          <label htmlFor="key" className="font-semibold mb-1 block text-sm">Nom d'utilisateur Spotify</label>
+          <label htmlFor="spotifyusername" className="font-semibold mb-1 block text-sm">Nom d'utilisateur Spotify</label>
           <input
             type="text"
-            name="usr"
+            name="spotifyusername"
+            id="spotifyusername"
+            autoComplete="on"
             placeholder="Nom d'utilisateur Spotify"
-            value={form.usr}
+            value={form.spotifyusername}
             onChange={handleChange}
             required
             className="w-full p-2 mb-2 bg-[#121212] border border-[#818181] rounded outline-none hover:border-white focus:border-white"
           />
-          <label htmlFor="key" className="font-semibold mb-1 block text-sm">Mot de passe Spotify</label>
+          <label htmlFor="pwd" className="font-semibold mb-1 block text-sm">Mot de passe Spotify</label>
           <input
             type="password"
             name="pwd"
@@ -114,11 +125,12 @@ const RenewPage = () => {
 
           {showNewAccount && (
             <>
-             <label htmlFor="key" className="font-semibold mb-1 block text-sm">Nouvelle adresse e-mail </label>
+             <label htmlFor="newEmail" className="font-semibold mb-1 block text-sm">Nouvelle adresse e-mail </label>
             <div className="flex gap-3 items-center justify-center mb-2">
               <input
                 type="email"
                 name="newEmail"
+                id="newEmail"
                 placeholder="Nouvelle adresse e-mail"
                 value={form.newEmail}
                 onChange={handleChange}
@@ -128,34 +140,45 @@ const RenewPage = () => {
               <FaRandom onClick={generateRandomEmail}  className="h-6 w-6 flex-grow cursor-pointer"/>
 
               </div>
-              <label htmlFor="key" className="font-semibold mb-1 block text-sm">Pays</label>
+              <label htmlFor="country" className="font-semibold mb-1 block text-sm">Pays</label>
               <div className="flex gap-2 items-center justify-center mb-4">
                 
                 <select
-            name="country"
-            value={form.country}
-            onChange={handleChange}
-            required
-            className="w-5/6 p-2 bg-[#121212] border border-[#818181] rounded outline-none hover:border-white focus:border-white"
-          >
-            <option value="">Sélectionner un pays</option>
-            {countries.map(({ country_code, country }) => (
-              <option key={country_code} value={country_code}>
-                {country}
-              </option>
-            ))}
-          </select><FaRegQuestionCircle title="If your country is out of stock, you can select another and still upgrade." className="h-6 w-6 flex-grow" /></div></>
+                  name="country"
+                  id="country"
+                  value={form.country}
+                  onChange={handleChange}
+                  required
+                  className="w-5/6 p-2 bg-[#121212] border border-[#818181] rounded outline-none hover:border-white focus:border-white"
+                >
+                    <option value="">Sélectionner un pays</option>
+                    {countries.map(({ country_code, country }) => (
+                      <option key={country_code} value={country_code}>
+                        {country}
+                      </option>
+                    ))}
+                </select>        
+            <div className="flex-grow">
+      <FaRegQuestionCircle
+        data-tooltip-id="info-tooltip"
+        className="h-6 w-6  mx-auto cursor-pointer text-gray-300 hover:text-gray-500"
+      />
+      <Tooltip id="info-tooltip" place="top" className="!bg-gray-900 !text-white !p-2 !rounded-md">
+      Si votre pays est en rupture de stock, vous pouvez en choisir un autre. <br /> Cela n'affectera que légèrement les recommandations.
+      </Tooltip>
+    </div></div></>
           )}
 
           <button
             type="submit"
-            className="w-full bg-green-500 text-black font-bold p-3 outline-none hover:bg-green-400 hover:scale-105 duration-300 transition-all rounded-full"
+            disabled={ loading || underMaintenance}
+            className={`w-full mt-1 bg-green-500 text-black font-bold p-3 outline-none hover:bg-green-400 hover:scale-105 duration-300 transition-all rounded-full disabled:bg-slate-500 ${underMaintenance || loading ? "cursor-not-allowed" : ""}`}
           >
             Renew
           </button>
         </form>
 
-        {message && <p className="mt-4 text-green-400">{message}</p>}
+        {message && <p className="mt-4">{message}</p>}
       </div>
     </motion.div>
   );
