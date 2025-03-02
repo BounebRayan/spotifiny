@@ -102,9 +102,9 @@ export default function Plans() {
     <section id="pricing">
       <div className="max-w-4xl mx-auto text-center">
 
-        <h2 className="text-3xl font-bold">Choose Your Plan</h2>
+        <h2 className="text-3xl font-bold">Choisissez votre offre</h2>
         <p className="text-gray-400 mb-5 mt-2">
-          Arrêtez de vous soucier chaque mois du coût de Spotify. <br /> Avec un seul paiement, obtenez Premium à vie.
+        Envoyez-nous un message sur Facebook pour acheter une offre. <br /> Avec un seul paiement, obtenez Premium à vie.
         </p>
         
         <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-2 flex overflow-x-auto md:overflow-hidden space-x-6 p-4">
@@ -119,13 +119,13 @@ export default function Plans() {
               <li>Spotify Premium à vie</li>
             </ul>
             <button
-              onClick={() => initiatePayment(40000, 1)}
+              onClick={() => /*initiatePayment(40000, 1)*/ window.open("https://www.facebook.com/bouneb.rayan", "_blank")}
               disabled={stock === null || stock <= 0}
               className={`w-full py-2 font-semibold rounded-full transition-colors ${
                 stock && stock > 0 ? "bg-green-500 text-black hover:bg-green-600" : "bg-gray-500 cursor-not-allowed"
               }`}
             >
-              {loading ? "Loading" : stock && stock > 0 ? "Acheter" : "Stock épuisé"}
+              {loading ? "Loading" : stock && stock > 0 ? "Contactez-nous" : "Stock épuisé"}
             </button>
           </div>
 
@@ -140,13 +140,13 @@ export default function Plans() {
               <li>Spotify Premium à vie</li>
             </ul>
             <button
-              onClick={() => initiatePayment(60000, 2)}
+              onClick={() => /*initiatePayment(60000, 2)*/ window.open("https://www.facebook.com/bouneb.rayan", "_blank")}
               disabled={stock === null || stock <= 1}
               className={`w-full py-2 font-semibold rounded-full transition-colors ${
                 stock && stock > 1 ? "bg-green-500 text-black hover:bg-green-600" : "bg-gray-500 cursor-not-allowed"
               }`}
             >
-              {loading ? "Loading" : stock && stock > 1 ? "Acheter" : "Stock épuisé"}
+              {loading ? "Loading" : stock && stock > 1 ? "Contactez-nous" : "Stock épuisé"}
             </button>
           </div>
 
@@ -161,13 +161,13 @@ export default function Plans() {
               <li>Spotify Premium à vie</li>
             </ul>
             <button
-              onClick={() => initiatePayment(90000, 4)}
+              onClick={() => /*initiatePayment(90000, 4)*/ window.open("https://www.facebook.com/bouneb.rayan", "_blank")}
               disabled={stock === null || stock <= 3}
               className={`w-full py-2 font-semibold rounded-full transition-colors ${
                 stock && stock > 3 ? "bg-green-500 text-black hover:bg-green-600" : "bg-gray-500 cursor-not-allowed"
               }`}
             >
-              {loading ? "Loading" : stock && stock > 3 ? "Acheter" : "Stock épuisé"}
+              {loading ? "Loading" : stock && stock > 3 ? "Contactez-nous" : "Stock épuisé"}
             </button>
           </div>
         </div>

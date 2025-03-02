@@ -3,21 +3,27 @@ import Key from '@/models/keys';
 import Order from '@/models/order';
 import connectToDB from '@/config/database';
 
-export async function GET(req: Request) {
+export async function POST(req: Request) {
   try {
-    await connectToDB();
-    const { searchParams } = new URL(req.url);
-    const paymentId = searchParams.get('paymentId');
-    const amount = searchParams.get('amount');
-    const email = searchParams.get('email');
 
-    if (!paymentId || !email || !amount) {
+    const { paymentId, type, email, password } = await req.json();
+
+    if (!paymentId || !email || !type || !password) {
       return NextResponse.json(
-        { message: 'Missing paymentId, email, or amount in query parameters' },
+        { message: 'Missing paymentId, email, type, or password in query parameters' },
         { status: 400 }
       );
     }
 
+    const PASSWORD = process.env.PASSWORD;
+
+    if (password !== PASSWORD) {
+      return NextResponse.json(
+        { message: 'Wrong password' },
+        { status: 403 }
+      );
+    }
+    await connectToDB();
     let order = await Order.findOne({ payment_id: paymentId }).populate({ path: 'keys', model: Key });
     
     if (order) {
@@ -25,14 +31,14 @@ export async function GET(req: Request) {
     }
 
     // Determine order type and required keys
-    let type, numberOfKeys;
-    if (amount === "40000") { type = "Solo"; numberOfKeys = 1; }
-    else if (amount === "60000") { type = "Duo"; numberOfKeys = 2; }
-    else { type = "Family"; numberOfKeys = 4; }
+    let numberOfKeys;
+    if (type == "Solo") { numberOfKeys = 1; }
+    else if (type === "Duo") {numberOfKeys = 2; }
+    else { numberOfKeys = 4; }
 
     // Find available keys
-    //const availableKeys = await Key.find({ state: "available" }).limit(numberOfKeys);
-    const availableKeys = await Key.find({ state: "reserved" }).limit(numberOfKeys);
+    const availableKeys = await Key.find({ state: "available" }).limit(numberOfKeys);
+
     
     if (availableKeys.length < numberOfKeys) {
       return NextResponse.json({ message: 'Not enough available keys' }, { status: 404 });

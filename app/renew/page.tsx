@@ -103,7 +103,7 @@ const RenewPage = () => {
             required
             className="w-full p-2 mb-4 bg-[#121212] border border-[#818181] rounded outline-none hover:border-white focus:border-white"
           />
-          <Link href="/faq#renew" className="text-center w-full block mb-4 underline">En savoir plus sur les options de renouvellement</Link>
+          {/*<Link href="/faq#renew" className="text-center w-full block mb-4 underline">En savoir plus sur les options de renouvellement</Link>
 
           <label className="flex items-center mb-4 w-full justify-center">
           <span className="mr-2 text-sm">Renouvelez la clé</span>
@@ -167,7 +167,7 @@ const RenewPage = () => {
       Si votre pays est en rupture de stock, vous pouvez en choisir un autre. <br /> Cela n'affectera que légèrement les recommandations.
       </Tooltip>
     </div></div></>
-          )}
+          )}*/}
 
           <button
             type="submit"

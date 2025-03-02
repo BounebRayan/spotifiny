@@ -50,8 +50,8 @@ const SuccessPageContent = () => {
   };
 
   const determinePlan = (amount: string) => {
-    if (amount === "30000") setPlan("Solo");
-    else if (amount === "50000") setPlan("Duo");
+    if (amount === "40000") setPlan("Solo");
+    else if (amount === "60000") setPlan("Duo");
     else setPlan("Family");
   };
 

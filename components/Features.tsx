@@ -26,7 +26,8 @@ export default function Features() {
     <FaRegCreditCard className="text-4xl text-green-500 mx-auto sm:mb-4 mb-3" />
     <h3 className="text-2xl font-semibold mb-2">Achetez une clé</h3>
     <p className="text-gray-400">
-      Nous acceptons les paiements par carte bancaire et E-Dinar. Un seul paiement, et vous êtes prêt à profiter du service !
+      {/*Nous acceptons les paiements par carte bancaire et E-Dinar. Un seul paiement, et vous êtes prêt à profiter du service !*/}
+      Pour le moment, nous acceptons uniquement les paiements par carte E-Dinar ou Main à Main. Un seul paiement, et vous êtes prêt à profiter du service !
     </p>
   </div>
 
