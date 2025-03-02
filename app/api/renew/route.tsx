@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
     const response = await fetch(
       `https://upgrader.cc/API/?renew=${key}&login=${encodeURIComponent(spotifyusername)}&pwd=${encodeURIComponent(pwd)}&newemail=${encodeURIComponent(newEmail)}&country=${country}`
     );
-    console.log(`https://upgrader.cc/API/?renew=${key}&login=${encodeURIComponent(spotifyusername)}&pwd=${encodeURIComponent(pwd)}&newemail=${encodeURIComponent(newEmail)}&country=${country}`);
+    //console.log(`https://upgrader.cc/API/?renew=${key}&login=${encodeURIComponent(spotifyusername)}&pwd=${encodeURIComponent(pwd)}&newemail=${encodeURIComponent(newEmail)}&country=${country}`);
     const data = await response.json();
 
     return NextResponse.json({

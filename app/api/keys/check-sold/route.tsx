@@ -6,7 +6,7 @@ import connectToDB from '@/config/database';
 export async function GET(req: Request) {
     try {
         await connectToDB();
-        console.log('Connecting to database...');
+        // console.log('Connecting to database...');
 
         // Count the number of sold keys
         const keysCount = await Key.countDocuments({ state: "sold" });

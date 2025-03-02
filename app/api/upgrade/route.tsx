@@ -15,7 +15,7 @@ export async function POST(req: Request) {
     const response = await fetch(
       `https://upgrader.cc/API/?upgrade=${key}&login=${encodeURIComponent(spotifyusername)}&pwd=${encodeURIComponent(pwd)}&country=${country}`
     );
-    console.log(`https://upgrader.cc/API/?upgrade=${key}&login=${encodeURIComponent(spotifyusername)}&pwd=${encodeURIComponent(pwd)}&country=${country}`);
+    //console.log(`https://upgrader.cc/API/?upgrade=${key}&login=${encodeURIComponent(spotifyusername)}&pwd=${encodeURIComponent(pwd)}&country=${country}`);
 
     const data = await response.json();
     return NextResponse.json(data, { status: 200 });

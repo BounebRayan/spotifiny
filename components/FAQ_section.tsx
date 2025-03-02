@@ -22,7 +22,7 @@ export default function FAQ() {
                     <span className="font-semibold flex items-center justify-between">Garantie à vie <ChevronDownIcon className="size-4 fill-white/60" /></span>
                   </DisclosureButton>
                   <DisclosurePanel className="pt-0 px-4 pb-4 text-gray-400 text-left">
-                    "À vie" signifie que nos services, comme les mises à jour Spotify, sont garantis pendant toute la durée de vie du service Upgrader.cc. Nous fournirons des remplacements illimités et gratuits pour toute régression pendant cette période.
+                    "À vie" signifie que nos services, sont garantis pendant toute la durée de vie du service Spotifiny. Nous fournirons des remplacements illimités et gratuits pour toute régression pendant cette période.
                   </DisclosurePanel>
                 </>
 

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import Key from "@/models/keys";
+import connectToDB from "@/config/database";
 
 export async function POST(req: Request) {
   try {
@@ -20,6 +21,8 @@ export async function POST(req: Request) {
         { status: 403 }
       );
     }
+
+    await connectToDB();
 
     const newKey = new Key({
       key,

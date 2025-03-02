@@ -119,7 +119,7 @@ export default function Plans() {
               <li>Spotify Premium à vie</li>
             </ul>
             <button
-              onClick={() => /*initiatePayment(40000, 1)*/ window.open("https://www.facebook.com/bouneb.rayan", "_blank")}
+              onClick={() => /*initiatePayment(40000, 1)*/ window.open("https://www.facebook.com/profile.php?id=61573513723812", "_blank")}
               disabled={stock === null || stock <= 0}
               className={`w-full py-2 font-semibold rounded-full transition-colors ${
                 stock && stock > 0 ? "bg-green-500 text-black hover:bg-green-600" : "bg-gray-500 cursor-not-allowed"
@@ -140,7 +140,7 @@ export default function Plans() {
               <li>Spotify Premium à vie</li>
             </ul>
             <button
-              onClick={() => /*initiatePayment(60000, 2)*/ window.open("https://www.facebook.com/bouneb.rayan", "_blank")}
+              onClick={() => /*initiatePayment(60000, 2)*/ window.open("https://www.facebook.com/profile.php?id=61573513723812", "_blank")}
               disabled={stock === null || stock <= 1}
               className={`w-full py-2 font-semibold rounded-full transition-colors ${
                 stock && stock > 1 ? "bg-green-500 text-black hover:bg-green-600" : "bg-gray-500 cursor-not-allowed"
@@ -161,7 +161,7 @@ export default function Plans() {
               <li>Spotify Premium à vie</li>
             </ul>
             <button
-              onClick={() => /*initiatePayment(90000, 4)*/ window.open("https://www.facebook.com/bouneb.rayan", "_blank")}
+              onClick={() => /*initiatePayment(90000, 4)*/ window.open("https://www.facebook.com/profile.php?id=61573513723812", "_blank")}
               disabled={stock === null || stock <= 3}
               className={`w-full py-2 font-semibold rounded-full transition-colors ${
                 stock && stock > 3 ? "bg-green-500 text-black hover:bg-green-600" : "bg-gray-500 cursor-not-allowed"

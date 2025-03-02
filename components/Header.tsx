@@ -35,19 +35,19 @@ export default function Header() {
 
                   <MenuItem>
                     <Link href="/upgrade" className="block rounded-md data-[focus]:bg-[#121212] w-full py-1.5 px-3">
-                      Upgrade
+                      Passer à Premium
                     </Link>
                   </MenuItem>
 
                   <MenuItem>
                     <Link href="/renew" className="block rounded-md data-[focus]:bg-[#121212] w-full py-1.5 px-3">
-                      Renew
+                      Renouveler
                     </Link>
                   </MenuItem>
 
                   <MenuItem>
                     <Link href="/key-info" className="block rounded-md data-[focus]:bg-[#121212] w-full py-1.5 px-3">
-                      Key Info
+                      Informations sur la clé
                     </Link>
                   </MenuItem>
 
@@ -77,7 +77,7 @@ export default function Header() {
                         href="/contact-us"
                         className="block data-[focus]:bg-[#121212] rounded-md w-full py-1.5 px-3"
                         >
-                        Contactez-nous
+                        Envoyez-nous un ticket
                       </Link>
                     </MenuItem>
 

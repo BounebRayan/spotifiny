@@ -103,6 +103,7 @@ const OrderPage = () => {
     } catch (error) {
       setOrderMessage(error instanceof Error ? error.message : "An unknown error occurred.");
     } finally {
+      fetchSoldKeys();
       setLoading(false);
     }
   };

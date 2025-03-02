@@ -5,7 +5,7 @@ import connectToDB from '@/config/database';
 export async function GET(req: Request) {
     try {
       await connectToDB();
-    console.log('Connecting to database...');
+    //console.log('Connecting to database...');
       const Query = Key.find({state:"available"});
       const keys = await Query.countDocuments();
   
